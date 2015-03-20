@@ -6,6 +6,28 @@ use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
+/**
+ * SimBlog\Model\User
+ *
+ * @property integer $id
+ * @property string $name
+ * @property string $email
+ * @property string $password
+ * @property string $img
+ * @property string $about
+ * @property string $remember_token
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @method static \Illuminate\Database\Query\Builder|\SimBlog\Model\User whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\SimBlog\Model\User whereName($value)
+ * @method static \Illuminate\Database\Query\Builder|\SimBlog\Model\User whereEmail($value)
+ * @method static \Illuminate\Database\Query\Builder|\SimBlog\Model\User wherePassword($value)
+ * @method static \Illuminate\Database\Query\Builder|\SimBlog\Model\User whereImg($value)
+ * @method static \Illuminate\Database\Query\Builder|\SimBlog\Model\User whereAbout($value)
+ * @method static \Illuminate\Database\Query\Builder|\SimBlog\Model\User whereRememberToken($value)
+ * @method static \Illuminate\Database\Query\Builder|\SimBlog\Model\User whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\SimBlog\Model\User whereUpdatedAt($value)
+ */
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract
 {
 
