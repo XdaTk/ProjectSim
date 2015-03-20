@@ -142,8 +142,6 @@ return [
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
         'Barryvdh\DomPDF\ServiceProvider',
         'GrahamCampbell\Markdown\MarkdownServiceProvider',
-        'Collective\Html\HtmlServiceProvider',
-        'Laracasts\Generators\GeneratorsServiceProvider',
 
         /*
          * Application Service Providers...
@@ -208,8 +206,6 @@ return [
 
         'PDF' => 'Barryvdh\DomPDF\Facade',
         'Markdown' => 'GrahamCampbell\Markdown\Facades\Markdown',
-        'Form' => 'Collective\Html\FormFacade',
-        'Html' => 'Collective\Html\HtmlFacade',
     ],
 
 ];

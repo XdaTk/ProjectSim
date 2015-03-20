@@ -11,7 +11,7 @@
 |
 */
 Route::get("/", function () {
-    return 'Hello World';
+    return \SimBlog\Model\User::all();
 });
 Route::controllers([
     'auth' => 'Auth\AuthController',
