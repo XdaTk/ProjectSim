@@ -142,6 +142,8 @@ return [
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
         'Barryvdh\DomPDF\ServiceProvider',
         'GrahamCampbell\Markdown\MarkdownServiceProvider',
+        'Collective\Html\HtmlServiceProvider',
+        'Laracasts\Generators\GeneratorsServiceProvider',
 
         /*
          * Application Service Providers...
@@ -198,11 +200,16 @@ return [
         'URL' => 'Illuminate\Support\Facades\URL',
         'Validator' => 'Illuminate\Support\Facades\Validator',
         'View' => 'Illuminate\Support\Facades\View',
+
+
         /**
-         * Customer IOC
+         * Customer aliases
          */
+
         'PDF' => 'Barryvdh\DomPDF\Facade',
-        'Markdown' => 'GrahamCampbell\Markdown\Facades\Markdown'
+        'Markdown' => 'GrahamCampbell\Markdown\Facades\Markdown',
+        'Form' => 'Collective\Html\FormFacade',
+        'Html' => 'Collective\Html\HtmlFacade',
     ],
 
 ];
