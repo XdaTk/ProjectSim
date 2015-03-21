@@ -13,6 +13,18 @@
 Route::get("/", function () {
     return \SimBlog\Model\User::all();
 });
+
+Route::get('/editor', function () {
+    return view('test.editor');
+});
+
+/**
+ * 编辑器文件上传控制
+ */
+Route::post('/edit/editorFileUpload', ['as' => 'editorFileUpload', 'uses' => 'Util\EditorFileUploadController@image']);
+/**
+ * 用户权限相关验证
+ */
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
