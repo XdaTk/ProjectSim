@@ -11,7 +11,7 @@
 |
 */
 Route::get("/", function () {
-    return \SimBlog\Model\User::all();
+    return \SimBlog\Models\User::all();
 });
 
 Route::get('/editor', function () {
