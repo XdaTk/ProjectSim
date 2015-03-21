@@ -1,4 +1,4 @@
-<?php namespace SimBlog\Model;
+<?php namespace SimBlog\Models;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
@@ -18,15 +18,15 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
  * @property string $remember_token
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
- * @method static \Illuminate\Database\Query\Builder|\SimBlog\Model\User whereId($value)
- * @method static \Illuminate\Database\Query\Builder|\SimBlog\Model\User whereName($value)
- * @method static \Illuminate\Database\Query\Builder|\SimBlog\Model\User whereEmail($value)
- * @method static \Illuminate\Database\Query\Builder|\SimBlog\Model\User wherePassword($value)
- * @method static \Illuminate\Database\Query\Builder|\SimBlog\Model\User whereImg($value)
- * @method static \Illuminate\Database\Query\Builder|\SimBlog\Model\User whereAbout($value)
- * @method static \Illuminate\Database\Query\Builder|\SimBlog\Model\User whereRememberToken($value)
- * @method static \Illuminate\Database\Query\Builder|\SimBlog\Model\User whereCreatedAt($value)
- * @method static \Illuminate\Database\Query\Builder|\SimBlog\Model\User whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\SimBlog\Models\User whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\SimBlog\Models\User whereName($value)
+ * @method static \Illuminate\Database\Query\Builder|\SimBlog\Models\User whereEmail($value)
+ * @method static \Illuminate\Database\Query\Builder|\SimBlog\Models\User wherePassword($value)
+ * @method static \Illuminate\Database\Query\Builder|\SimBlog\Models\User whereImg($value)
+ * @method static \Illuminate\Database\Query\Builder|\SimBlog\Models\User whereAbout($value)
+ * @method static \Illuminate\Database\Query\Builder|\SimBlog\Models\User whereRememberToken($value)
+ * @method static \Illuminate\Database\Query\Builder|\SimBlog\Models\User whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\SimBlog\Models\User whereUpdatedAt($value)
  */
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract
 {
