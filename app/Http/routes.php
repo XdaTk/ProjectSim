@@ -10,13 +10,15 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::get("/", function () {
-    return \SimBlog\Models\User::all();
-});
 
 Route::get('/editor', function () {
     return view('test.editor');
 });
+/**
+ * 博客内容控制器
+ */
+Route::get('/', 'Index\BlogController@index');
+Route::get('/blog/{id}', 'Index\BlogController@show')->where(['id' => '[0-9]+']);
 
 /**
  * 编辑器文件上传控制
