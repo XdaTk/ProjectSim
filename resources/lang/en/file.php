@@ -9,4 +9,5 @@ return [
     'fileNotFound' => 'Upload File Not Found',
     'fileUploadError' => 'File Upload Error',
     'fileSuccess' => 'File Upload Success',
+    'blogNotFound'=>'Sorry ,Not Found This Pages'
 ];
