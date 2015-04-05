@@ -4,7 +4,7 @@
     <div>
         @foreach($blogs as $blog)
             <hr>
-            标题： <a href="">{{$blog->title}}</a><br>
+            标题： <a href="/blog/{{$blog->id}}">{{$blog->title}}</a><br>
             创建人： {{$blog->users->name}}<br>
             内容： {{$blog->article}}<br>
             图片： {{$blog->url}}<br>
