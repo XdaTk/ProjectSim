@@ -7,6 +7,18 @@ use SimBlog\Models\Blogs;
 
 class BlogController extends Controller
 {
+    /**
+     * Set Blog Reader Count
+     *
+     * @param $id
+     */
+    protected function blogReaderCount($blog,$id){
+        if(\Session::get('BlogInfo'.$id)==null){
+            $blog->reads++;
+            $blog->save();
+            \Session::set('BlogInfo'.$id,true);
+        }
+    }
 
     /**
      * Display a listing of the resource.
@@ -28,6 +40,7 @@ class BlogController extends Controller
     public function show($id)
     {
         $blog = Blogs::find($id);
+        $this->blogReaderCount($blog,$id);
         if($blog==null){
             abort(404,\Lang::get('file.blogNotFound'));
         }
