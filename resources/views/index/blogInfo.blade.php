@@ -7,8 +7,8 @@
                 <a href="/blog/{{$blogInfo->id}}">{{$blogInfo->title}}</a>
             </h1>
 
-            <p class="uk-article-meta"><a href="#">创建人：{{$blogInfo->users->name}} &nbsp</a>创建于：{{$blogInfo->created_at}}
-            </p>
+            <p class="uk-article-meta"><a href="#">创建人：{{$blogInfo->users->name}} &nbsp</a> <a
+                        href="#">分类信息：{{$blogInfo->Classify->name}}</a> 创建于：{{$blogInfo->created_at}}</p>
 
             <p>
                 <a href=""><img width="900" height="300" src="{{$blogInfo->url}}" alt=""></a>
@@ -17,7 +17,7 @@
             {{$blogInfo->article}}
             <p>
                 <a class="uk-button uk-button-danger" href="#" onclick=""><i
-                            class="uk-icon-star"></i>&nbsp;点赞({{$blogInfo->reads}})</a>
+                            class="uk-icon-star"></i>&nbsp;点赞({{$blogInfo->loves}})</a>
                 <a class="uk-button uk-button-primary" href="#my-id" data-uk-modal=""><i class="uk-icon-comment"></i>&nbsp;评论</a>
             </p>
         </article>

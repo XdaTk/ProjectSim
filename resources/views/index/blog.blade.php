@@ -8,43 +8,29 @@
         <div class="uk-width-medium-1-1">
             <div class="uk-slidenav-position" data-uk-slideshow="">
                 <ul class="uk-slideshow uk-overlay-active" style="height: 411px;">
-                    <li aria-hidden="true" style="height: 411px;">
-                        <div class="uk-cover-background uk-position-cover"
-                             style="background-image: url(http://getuikit.com/docs/images/placeholder_800x400_2.jpg);"></div>
-                        <img src="http://getuikit.com/docs/images/placeholder_800x400_2.jpg" width="800" height="400"
-                             alt="" style="width: 100%; height: auto;">
+                    @foreach($lovesTops as $lovesTop)
+                        <li aria-hidden="true" style="height: 411px;">
+                            <div class="uk-cover-background uk-position-cover"
+                                 style="background-image: url({{$lovesTop->url}});"></div>
+                            <img src="{{$lovesTop->url}}" width="800"
+                                 height="400"
+                                 alt="" style="width: 100%; height: auto;">
 
-                        <div class="uk-overlay-panel uk-overlay-background uk-overlay-fade uk-flex uk-flex-center uk-flex-middle uk-text-center">
-                            <div>
-                                <h3>Overlay</h3>
+                            <div class="uk-overlay-panel uk-overlay-background uk-overlay-fade uk-flex uk-flex-center uk-flex-middle uk-text-center">
+                                <div>
+                                    <h3>{{$lovesTop->title}}</h3>
 
-                                <p>Lorem <a href="#">ipsum dolor</a> sit amet, consetetur sadipscing elitr,<br>sed diam
-                                    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.</p>
-                                <button class="uk-button uk-button-primary">Button</button>
+                                    <p>{{$lovesTop->brief}}</p>
+                                    <a href="/blog/{{$lovesTop->id}}" class="uk-button uk-button-primary">查看更多</a>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                    <li aria-hidden="true" style="height: 411px;">
-                        <div class="uk-cover-background uk-position-cover"
-                             style="background-image: url(http://getuikit.com/docs/images/placeholder_800x400_1.jpg);"></div>
-                        <img src="http://getuikit.com/docs/images/placeholder_800x400_2.jpg" width="800" height="400"
-                             alt="" style="width: 100%; height: auto;">
-
-                        <div class="uk-overlay-panel uk-overlay-background uk-overlay-fade uk-flex uk-flex-center uk-flex-middle uk-text-center">
-                            <div>
-                                <h3>Overlay</h3>
-
-                                <p>Lorem <a href="#">ipsum dolor</a> sit amet, consetetur sadipscing elitr,<br>sed diam
-                                    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.</p>
-                                <button class="uk-button uk-button-primary">Button</button>
-                            </div>
-                        </div>
-                    </li>
+                        </li>
+                    @endforeach
                 </ul>
                 <a href="#" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous"
-                   data-uk-slideshow-item="previous" style="color: rgba(255,255,255,0.4)"></a>
+                   data-uk-slideshow-item="previous" style="color: rgba(13, 23, 255, 0.40)"></a>
                 <a href="#" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideshow-item="next"
-                   style="color: rgba(255,255,255,0.4)"></a>
+                   style="color:  rgba(13, 23, 255, 0.40)"></a>
             </div>
         </div>
     </div>
@@ -57,17 +43,20 @@
                     <a href="/blog/{{$blog->id}}">{{$blog->title}}</a>
                 </h1>
 
-                <p class="uk-article-meta"><a href="#">创建人：{{$blog->users->name}} &nbsp</a>创建于：{{$blog->created_at}}</p>
+                <p class="uk-article-meta"><a href="#">创建人：{{$blog->users->name}} &nbsp</a> <a
+                            href="#">分类信息：{{$blog->Classify->name}}</a> 创建于：{{$blog->created_at}}</p>
 
                 <p>
                     <a href="/blog/{{$blog->id}}"><img width="900" height="300" src="{{$blog->url}}" alt=""></a>
                 </p>
 
                 <p>
-                    {{$blog->article}}
+                    {{$blog->brief}}
                 </p>
                 <a class="uk-button uk-button-danger" href="#" onclick=""><i
-                            class="uk-icon-star"></i>&nbsp;点赞({{$blog->reads}})</a>
+                            class="uk-icon-star"></i>&nbsp;阅读数量({{$blog->reads}})</a>
+                <a class="uk-button uk-button-danger" id="lover{{$blog->id}}" href="#lover{{$blog->id}}" onclick="addLoverCount({{$blog->id}})"><i
+                            class="uk-icon-star"></i>&nbsp;喜欢({{$blog->loves}})</a>
                 <a class="uk-button uk-button-primary" href="/blog/{{$blog->id}}"><i class="uk-icon-tag"></i>&nbsp;继续阅读</a>
             </article>
         @endforeach
