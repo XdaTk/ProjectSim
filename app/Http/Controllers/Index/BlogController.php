@@ -27,7 +27,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs = Blogs::paginate(15);
+        $blogs = Blogs::paginate(5);
         return view("index.blog", ['blogs' => $blogs, 'pages' => $blogs->toArray()]);
     }
 

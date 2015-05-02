@@ -1,0 +1,13 @@
+.uk-search:before{
+    content: "";
+}
+.uk-nav-dropdown .uk-nav-header{
+    font-size: 16px;
+    color: #333333;
+}
+.uk-article-title {
+    font-size: 30px;
+    line-height: 42px;
+    font-weight: 400;
+    text-transform: none;
+}

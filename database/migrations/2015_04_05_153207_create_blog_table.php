@@ -18,7 +18,7 @@ class CreateBlogTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->integer("type");
             $table->string('title')->index();
-            $table->string('article');
+            $table->text('article');
             $table->string('url');
             $table->integer('reads');
             $table->timestamps();
