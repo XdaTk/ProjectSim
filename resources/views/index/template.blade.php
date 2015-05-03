@@ -90,7 +90,9 @@
             <div class="uk-panel">
                 <h3 class="uk-panel-title"><i class="uk-icon-link">>友情链接</i></h3>
                 <ul class="uk-list uk-list-line">
-                    <li><a href="#">管理链接</a></li>
+                    @foreach($loveWebs as $loveWeb)
+                        <li><a href="{{$loveWeb->url}}" target="_blank">{{$loveWeb->name}}</a></li>
+                    @endforeach
                 </ul>
             </div>
         </div>
@@ -129,7 +131,9 @@
         <div class="uk-panel">
             <h3 class="uk-panel-title">友情链接&nbsp;<i class="uk-icon-link"></i></h3>
             <ul class="uk-list">
-                <li><a href="#">管理链接</a></li>
+                @foreach($loveWebs as $loveWeb)
+                    <li><a href="{{$loveWeb->url}}" target="_blank">{{$loveWeb->name}}</a></li>
+                @endforeach
             </ul>
         </div>
     </div>

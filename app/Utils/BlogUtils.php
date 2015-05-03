@@ -14,14 +14,14 @@ use SimBlog\Models\Blogs;
 class BlogUtils {
 
     public static function findNewsTop(){
-       return Blogs::paginate(5)->sortBy('created_at');
+       return Blogs::all()->sortBy('created_at')->take(5);
     }
 
     public static function findReadsTop(){
-        return Blogs::paginate(5)->sortBy('reads');
+        return Blogs::all()->sortBy('reads')->take(5);
     }
     public static function findLovesTop(){
-        return Blogs::paginate(5)->sortBy('loves');
+        return Blogs::all()->sortBy('loves')->take(5);
     }
 
 }

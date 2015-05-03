@@ -6,6 +6,7 @@ use SimBlog\Http\Requests;
 use SimBlog\Models\Blogs;
 use SimBlog\Utils\BlogUtils;
 use SimBlog\Utils\ClassifiesUtils;
+use SimBlog\Utils\LoveWebUtils;
 use SimBlog\Utils\UserInfosUtils;
 
 
@@ -25,7 +26,8 @@ class BlogController extends Controller
             'classifys' => ClassifiesUtils::findClassify(),
             'newsTops' => BlogUtils::findNewsTop(),
             'lovesTops' => BlogUtils::findLovesTop(),
-            'readsTops' => BlogUtils::findReadsTop()
+            'readsTops' => BlogUtils::findReadsTop(),
+            'loveWebs' => LoveWebUtils::findAllLoveWebs()
         ]);
     }
 
@@ -43,7 +45,8 @@ class BlogController extends Controller
             'classifys' => ClassifiesUtils::findClassify(),
             'newsTops' => BlogUtils::findNewsTop(),
             'lovesTops' => BlogUtils::findLovesTop(),
-            'readsTops' => BlogUtils::findReadsTop()
+            'readsTops' => BlogUtils::findReadsTop(),
+            'loveWebs' => LoveWebUtils::findAllLoveWebs()
         ]);
     }
 
@@ -65,7 +68,9 @@ class BlogController extends Controller
             'classifys' => ClassifiesUtils::findClassify(),
             'newsTops' => BlogUtils::findNewsTop(),
             'lovesTops' => BlogUtils::findLovesTop(),
-            'readsTops' => BlogUtils::findReadsTop()]);
+            'readsTops' => BlogUtils::findReadsTop(),
+            'loveWebs' => LoveWebUtils::findAllLoveWebs()
+        ]);
     }
 
     /**
