@@ -44,7 +44,7 @@
                 </h1>
 
                 <p class="uk-article-meta"><a href="">创建人：{{$blog->users->name}} &nbsp</a> <a target="_blank"
-                            href="/blog/classify/{{$blog->Classify->name}}">分类信息：{{$blog->Classify->name}}</a> 创建于：{{$blog->created_at}}</p>
+                            href="/blog/classify/{{$blog->Classify->id}}">分类信息：{{$blog->Classify->name}}</a> 创建于：{{$blog->created_at}}</p>
 
                 <p>
                     <a href="/blog/{{$blog->id}}"><img width="900" height="300" src="{{$blog->url}}" alt=""></a>
