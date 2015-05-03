@@ -63,10 +63,10 @@
         @endforeach
         <ul class="uk-pagination"
             data-uk-pagination="{items:{{$pages['total']}}, itemsOnPage:{{$pages['per_page']}},currentPage:{{$pages['current_page']}}}"></ul>
-            <script>
-                $('[data-uk-pagination]').on('select.uk.pagination', function(e, pageIndex){
-                    location.href ="/?page="+(pageIndex+1);
-                });
-            </script>
+        <script>
+            $('[data-uk-pagination]').on('select.uk.pagination', function (e, pageIndex) {
+                location.href = "/?page=" + (pageIndex + 1);
+            });
+        </script>
     </div>
 @stop

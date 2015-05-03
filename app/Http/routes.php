@@ -19,6 +19,7 @@ Route::get('/editor', function () {
  */
 Route::get('/', 'Index\BlogController@index');
 Route::get('/blog/{id}', 'Index\BlogController@show')->where(['id' => '[0-9]+']);
+Route::get('/blog/classify/{id}', 'Index\BlogController@classify')->where(['id' => '[0-9]+']);
 Route::post('/blog/love/{id}', 'Index\BlogController@blogLoverCount')->where(['id' => '[0-9]+']);
 
 /**

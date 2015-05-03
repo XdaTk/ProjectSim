@@ -1,7 +1,5 @@
 <?php namespace SimBlog\Http\Controllers\Index;
 
-use Input;
-use Request;
 use Response;
 use SimBlog\Http\Controllers\Controller;
 use SimBlog\Http\Requests;
@@ -21,6 +19,24 @@ class BlogController extends Controller
     public function index()
     {
         $blogs = Blogs::paginate(5);
+        return view("index.blog", ['blogs' => $blogs,
+            'pages' => $blogs->toArray(),
+            'userInfos' => UserInfosUtils::findUserInfos(),
+            'classifys' => ClassifiesUtils::findClassify(),
+            'newsTops' => BlogUtils::findNewsTop(),
+            'lovesTops' => BlogUtils::findLovesTop(),
+            'readsTops' => BlogUtils::findReadsTop()
+        ]);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */
+    public function classify($classify)
+    {
+        $blogs = Blogs::whereClassId($classify)->paginate(5);
         return view("index.blog", ['blogs' => $blogs,
             'pages' => $blogs->toArray(),
             'userInfos' => UserInfosUtils::findUserInfos(),

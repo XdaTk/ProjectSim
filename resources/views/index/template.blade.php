@@ -83,7 +83,7 @@
                 <h3 class="uk-panel-title"><i class="uk-icon-comments-o"></i>分类信息</h3>
                 <ul class="uk-list uk-list-line">
                     @foreach($classifys as $classify)
-                        <li><a href="#">{{$classify->name}}</a></li>
+                        <li><a href="/blog/classify/{{$classify->id}}">{{$classify->name}}</a></li>
                     @endforeach
                 </ul>
             </div>
@@ -130,14 +130,6 @@
             <h3 class="uk-panel-title">友情链接&nbsp;<i class="uk-icon-link"></i></h3>
             <ul class="uk-list">
                 <li><a href="#">管理链接</a></li>
-            </ul>
-        </div>
-        <div class="uk-panel">
-            <h3 class="uk-panel-title">Social Links</h3>
-            <ul class="uk-list">
-                <li><a href="#">GitHub</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Facebook</a></li>
             </ul>
         </div>
     </div>
