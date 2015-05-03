@@ -29,6 +29,7 @@ function addComments($id) {
                 UIkit.notify('评论成功');
                 var modal = UIkit.modal("#my-id");
                 modal.hide();
+                getFirstComments($id);
             } else if (data == "fail") {
                 UIkit.notify('评论失败');
             } else {
@@ -65,7 +66,7 @@ function getPageComments($id, $page) {
     });
 }
 
-function wieteComments($id,$data) {
+function wieteComments($id, $data) {
     var $message = '';
     $.each($data.data, function (n) {
         $message += '<li>' +
