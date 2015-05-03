@@ -13,6 +13,11 @@ use SimBlog\Models\Classifies;
 
 class ClassifiesUtils {
     public static function findClassify(){
-        return Classifies::all();
+        $value = \Cache::get('findClassify');
+        if ($value == null) {
+            $value = Classifies::all();
+            \Cache::pull('findClassify', $value, 60);
+        }
+        return $value;
     }
 }

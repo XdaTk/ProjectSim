@@ -11,17 +11,37 @@ namespace SimBlog\Utils;
 
 use SimBlog\Models\Blogs;
 
-class BlogUtils {
+class BlogUtils
+{
 
-    public static function findNewsTop(){
-       return Blogs::all()->sortBy('created_at')->take(5);
+    public static function findNewsTop()
+    {
+        $value = \Cache::get('findNewsTop');
+        if ($value == null) {
+            $value = Blogs::all()->sortBy('created_at')->take(5);
+            \Cache::pull('findNewsTop', $value, 60);
+        }
+        return $value;
     }
 
-    public static function findReadsTop(){
-        return Blogs::all()->sortBy('reads')->take(5);
+    public static function findReadsTop()
+    {
+        $value = \Cache::get('findReadsTop');
+        if ($value == null) {
+            $value = Blogs::all()->sortBy('reads')->take(5);
+            \Cache::pull('findReadsTop', $value, 60);
+        }
+        return $value;
     }
-    public static function findLovesTop(){
-        return Blogs::all()->sortBy('loves')->take(5);
+
+    public static function findLovesTop()
+    {
+        $value = \Cache::get('findLovesTop');
+        if ($value == null) {
+            $value = Blogs::all()->sortBy('loves')->take(5);
+            \Cache::pull('findLovesTop', $value, 60);
+        }
+        return $value;
     }
 
 }

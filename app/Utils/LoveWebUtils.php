@@ -11,8 +11,15 @@ namespace SimBlog\Utils;
 
 use SimBlog\Models\LoveWeb;
 
-class LoveWebUtils {
-    public static function findAllLoveWebs(){
-        return LoveWeb::all();
+class LoveWebUtils
+{
+    public static function findAllLoveWebs()
+    {
+        $value = \Cache::get('findAllLoveWebs');
+        if ($value == null) {
+            $value = LoveWeb::all();
+            \Cache::pull('findAllLoveWebs', $value, 60);
+        }
+        return $value;
     }
 }

@@ -13,6 +13,11 @@ use SimBlog\Models\User;
 
 class UserInfosUtils {
     public static function findUserInfos(){
-       return  User::all();
+        $value = \Cache::get('findUserInfos');
+        if ($value == null) {
+            $value = User::all();
+            \Cache::pull('findUserInfos', $value, 60);
+        }
+        return $value;
     }
 }
