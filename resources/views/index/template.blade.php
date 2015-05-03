@@ -65,17 +65,17 @@
                 <ul id="new_article" class="uk-switcher uk-margin">
                     <li>
                         @foreach($newsTops as $newsTop)
-                            <a href="/blog/{{$newsTop->id}}">{{$newsTop->id}}</a><br>
+                            <a href="/blog/{{$newsTop->id}}">{{$newsTop->name}}</a><br>
                         @endforeach
                     </li>
                     <li>
                         @foreach($readsTops as $readsTop)
-                            <a href="/blog/{{$readsTop->id}}">{{$readsTop->id}}</a><br>
+                            <a href="/blog/{{$readsTop->id}}">{{$readsTop->name}}</a><br>
                         @endforeach
                     </li>
                     <li>
                         @foreach($lovesTops as $lovesTop)
-                            <a href="/blog/{{$lovesTop->id}}">{{$lovesTop->id}}</a><br>
+                            <a href="/blog/{{$lovesTop->id}}">{{$lovesTop->name}}</a><br>
                         @endforeach
                     </li>
                 </ul>
