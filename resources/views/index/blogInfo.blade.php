@@ -1,5 +1,17 @@
 @extends('index.template')
 
+@section('markdown')
+    <link rel="stylesheet" href="{{asset('/res/editor/css/editormd.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/res/editor/css/editormd.preview.min.css')}}">
+    <script src="{{asset('/res/editor/lib/marked.min.js')}}"></script>
+    <script src="{{asset('/res/editor/lib/prettify.min.js')}}"></script>
+    <script src="{{asset('/res/editor/lib/raphael.min.js')}}"></script>
+    <script src="{{asset('/res/editor/lib/underscore.min.js')}}"></script>
+    <script src="{{asset('/res/editor/lib/sequence-diagram.min.js')}}"></script>
+    <script src="{{asset('/res/editor/lib/flowchart.min.js')}}"></script>
+    <script src="{{asset('/res/editor/lib/jquery.flowchart.min.js')}}"></script>
+    <script src="{{asset('/res/editor/editormd.min.js')}}"></script>
+@stop
 @section('blog')
     <div class="uk-width-medium-3-4">
         <article class="uk-article">
@@ -8,13 +20,28 @@
             </h1>
 
             <p class="uk-article-meta">创建人：{{$blogInfo->users->name}} &nbsp<a target="_blank"
-                        href="/blog/classify/{{$blogInfo->Classify->id}}">分类信息：{{$blogInfo->Classify->name}}</a> 创建于：{{$blogInfo->created_at}}</p>
+                                                                              href="/blog/classify/{{$blogInfo->Classify->id}}">分类信息：{{$blogInfo->Classify->name}}</a>
+                创建于：{{$blogInfo->created_at}}</p>
 
             <p>
                 <a href=""><img width="900" height="300" src="{{$blogInfo->url}}" alt=""></a>
             </p>
             <hr>
-            {{$blogInfo->article}}
+            <div id="editormd-view">
+                <textarea style="display: none"> {{$blogInfo->article}}</textarea>
+            </div>
+            <script>
+                $(function () {
+                    EditormdView = editormd.markdownToHTML("editormd-view", {
+                        htmlDecode: "style,script,iframe",
+                        emoji: true,
+                        taskList: true,
+                        tex: true,
+                        flowChart: true,
+                        sequenceDiagram: true
+                    });
+                });
+            </script>
             <p>
                 <a class="uk-button uk-button-danger" id="lover{{$blogInfo->id}}" href="#lover{{$blogInfo->id}}"
                    onclick="addLoverCount({{$blogInfo->id}})"><i

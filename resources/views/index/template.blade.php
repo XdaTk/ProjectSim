@@ -19,6 +19,7 @@
     <script src="{{asset('/res/uikit/js/components/slideshow-fx.min.js')}}"></script>
     <script src="{{asset('/res/uikit/js/components/pagination.min.js')}}"></script>
     <script src="{{asset('/res/custom/js/main.js')}}"></script>
+    @yield('markdown')
 </head>
 <body>
 <div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
@@ -64,17 +65,17 @@
                 <ul id="new_article" class="uk-switcher uk-margin">
                     <li>
                         @foreach($newsTops as $newsTop)
-                            <a href="/blog/{{$newsTop->id}}">{{$newsTop->title}}</a><br>
-                        @endforeach
-                    </li>
-                    <li>
-                        @foreach($lovesTops as $lovesTop)
-                            <a href="/blog/{{$lovesTop->id}}">{{$lovesTop->title}}</a><br>
+                            <a href="/blog/{{$newsTop->id}}">{{$newsTop->id}}</a><br>
                         @endforeach
                     </li>
                     <li>
                         @foreach($readsTops as $readsTop)
-                            <a href="/blog/{{$readsTop->id}}">{{$readsTop->title}}</a><br>
+                            <a href="/blog/{{$readsTop->id}}">{{$readsTop->id}}</a><br>
+                        @endforeach
+                    </li>
+                    <li>
+                        @foreach($lovesTops as $lovesTop)
+                            <a href="/blog/{{$lovesTop->id}}">{{$lovesTop->id}}</a><br>
                         @endforeach
                     </li>
                 </ul>

@@ -19,7 +19,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs = Blogs::paginate(5);
+        $blogs = Blogs::orderBy('created_at','ase')->paginate(5);
         return view("index.blog", ['blogs' => $blogs,
             'pages' => $blogs->toArray(),
             'userInfos' => UserInfosUtils::findUserInfos(),
@@ -38,7 +38,7 @@ class BlogController extends Controller
      */
     public function classify($classify)
     {
-        $blogs = Blogs::whereClassId($classify)->paginate(5);
+        $blogs = Blogs::whereClassId($classify)->orderBy('created_at','ase')->paginate(5);
         return view("index.blog", ['blogs' => $blogs,
             'pages' => $blogs->toArray(),
             'userInfos' => UserInfosUtils::findUserInfos(),
