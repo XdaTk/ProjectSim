@@ -7,7 +7,7 @@
                 <a href="/blog/{{$blogInfo->id}}">{{$blogInfo->title}}</a>
             </h1>
 
-            <p class="uk-article-meta"><a href="">创建人：{{$blogInfo->users->name}} &nbsp</a> <a target="_blank"
+            <p class="uk-article-meta">创建人：{{$blogInfo->users->name}} &nbsp<a target="_blank"
                         href="/blog/classify/{{$blogInfo->Classify->id}}">分类信息：{{$blogInfo->Classify->name}}</a> 创建于：{{$blogInfo->created_at}}</p>
 
             <p>

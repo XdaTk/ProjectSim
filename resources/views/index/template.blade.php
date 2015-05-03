@@ -124,7 +124,7 @@
             <h3 class="uk-panel-title"><i class="uk-icon-comments-o"></i>分类信息&nbsp;</h3>
             <ul class="uk-list">
                 @foreach($classifys as $classify)
-                    <li><a href="#">{{$classify->name}}</a></li>
+                    <li><a href="/blog/classify/{{$classify->id}}">{{$classify->name}}</a></li>
                 @endforeach
             </ul>
         </div>

@@ -19,8 +19,6 @@
                             <div class="uk-overlay-panel uk-overlay-background uk-overlay-fade uk-flex uk-flex-center uk-flex-middle uk-text-center">
                                 <div>
                                     <h3>{{$lovesTop->title}}</h3>
-
-                                    <p>{{$lovesTop->brief}}</p>
                                     <a href="/blog/{{$lovesTop->id}}" class="uk-button uk-button-primary">查看更多</a>
                                 </div>
                             </div>
@@ -43,7 +41,7 @@
                     <a href="/blog/{{$blog->id}}">{{$blog->title}}</a>
                 </h1>
 
-                <p class="uk-article-meta"><a href="">创建人：{{$blog->users->name}} &nbsp</a> <a target="_blank"
+                <p class="uk-article-meta">创建人：{{$blog->users->name}} &nbsp <a target="_blank"
                             href="/blog/classify/{{$blog->Classify->id}}">分类信息：{{$blog->Classify->name}}</a> 创建于：{{$blog->created_at}}</p>
 
                 <p>
