@@ -7,8 +7,8 @@
                 <a href="/blog/{{$blogInfo->id}}">{{$blogInfo->title}}</a>
             </h1>
 
-            <p class="uk-article-meta"><a href="#">创建人：{{$blogInfo->users->name}} &nbsp</a> <a
-                        href="#">分类信息：{{$blogInfo->Classify->name}}</a> 创建于：{{$blogInfo->created_at}}</p>
+            <p class="uk-article-meta"><a href="">创建人：{{$blogInfo->users->name}} &nbsp</a> <a target="_blank"
+                        href="/blog/classify/{{$blogInfo->Classify->id}}">分类信息：{{$blogInfo->Classify->name}}</a> 创建于：{{$blogInfo->created_at}}</p>
 
             <p>
                 <a href=""><img width="900" height="300" src="{{$blogInfo->url}}" alt=""></a>
