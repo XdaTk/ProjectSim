@@ -55,35 +55,18 @@
                 </p>
                 <a class="uk-button uk-button-danger" href="#" onclick=""><i
                             class="uk-icon-star"></i>&nbsp;阅读数量({{$blog->reads}})</a>
-                <a class="uk-button uk-button-danger" id="lover{{$blog->id}}" href="#lover{{$blog->id}}" onclick="addLoverCount({{$blog->id}})"><i
+                <a class="uk-button uk-button-danger" id="lover{{$blog->id}}" href="#lover{{$blog->id}}"
+                   onclick="addLoverCount({{$blog->id}})"><i
                             class="uk-icon-star"></i>&nbsp;喜欢({{$blog->loves}})</a>
                 <a class="uk-button uk-button-primary" href="/blog/{{$blog->id}}"><i class="uk-icon-tag"></i>&nbsp;继续阅读</a>
             </article>
         @endforeach
-        <ul class="uk-pagination">
-            <li class=""><a href="{{$pages['prev_page_url']}}"><span><i
-                                class="uk-icon-angle-double-left"></i></span></a></li>
-            @if($pages['current_page']>3)
-                @if($pages['current_page']!=1)
-                    <li><a href="/?page=1">第一页</a></li>
-                @endif
-                <li><a href="/?page={{$pages['current_page']-2}}">{{$pages['current_page']-2}}</a></li>
-                <li><a href="/?page={{$pages['current_page']-1}}">{{$pages['current_page']-1}}</a></li>
-            @endif
-            <li class="uk-active"><span>{{$pages['current_page']}}</span></li>
-            @if($pages['current_page']+2<$pages['last_page'])
-                <li><a href="/?page={{$pages['current_page']+1}}">{{$pages['current_page']+1}}</a></li>
-                <li><a href="/?page={{$pages['current_page']+2}}">{{$pages['current_page']+2}}</a></li>
-            @endif
-            @if($pages['current_page']+2<$pages['last_page']&&$pages['last_page']>5)
-                <li><span>...</span></li>
-                <li><a href="/?page={{$pages['last_page']-2}}">{{$pages['last_page']-2}}</a></li>
-                <li><a href="/?page={{$pages['last_page']-1}}">{{$pages['last_page']-1}}</a></li>
-            @endif
-            @if($pages['current_page']!=$pages['last_page'])
-                <li><a href="/?page={{$pages['last_page']}}">最后一页</a></li>
-            @endif
-            <li><a href="{{$pages['next_page_url']}}#"><i class="uk-icon-angle-double-right"></i></a></li>
-        </ul>
+        <ul class="uk-pagination"
+            data-uk-pagination="{items:{{$pages['total']}}, itemsOnPage:{{$pages['per_page']}},currentPage:{{$pages['current_page']}}}"></ul>
+            <script>
+                $('[data-uk-pagination]').on('select.uk.pagination', function(e, pageIndex){
+                    location.href ="/?page="+(pageIndex+1);
+                });
+            </script>
     </div>
 @stop

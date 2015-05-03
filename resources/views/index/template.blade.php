@@ -7,14 +7,18 @@
     @yield('title')
     <link rel="stylesheet" href="{{asset('/res/uikit/css/uikit.almost-flat.min.css')}}">
     <link rel="stylesheet" href="{{asset('/res/uikit/css/components/search.almost-flat.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/res/uikit/css/components/notify.almost-flat.min.css')}}">
     <link rel="stylesheet" href="{{asset('/res/uikit/css/components/slideshow.almost-flat.min.css')}}">
     <link rel="stylesheet" href="{{asset('/res/uikit/css/components/slidenav.almost-flat.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/res/uikit/css/components/pagination.almost-flat.min.css')}}">
     <link rel="stylesheet" href="{{asset('/res/custom/css/main.css')}}">
     <script src="{{asset('/res/jquery.min.js')}}"></script>
     <script src="{{asset('/res/uikit/js/uikit.min.js')}}"></script>
+    <script src="{{asset('/res/uikit/js/components/notify.min.js')}}"></script>
     <script src="{{asset('/res/uikit/js/components/search.min.js')}}"></script>
     <script src="{{asset('/res/uikit/js/components/slideshow.min.js')}}"></script>
     <script src="{{asset('/res/uikit/js/components/slideshow-fx.min.js')}}"></script>
+    <script src="{{asset('/res/uikit/js/components/pagination.min.js')}}"></script>
     <script src="{{asset('/res/custom/js/main.js')}}"></script>
 </head>
 <body>

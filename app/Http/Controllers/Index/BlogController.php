@@ -73,8 +73,8 @@ class BlogController extends Controller
             $blog->loves++;
             $blog->save();
             \Session::set('blogLove' . $id, true);
+            return $blog->loves;
         }
-        return "";
     }
 
 }

@@ -19,8 +19,12 @@ Route::get('/editor', function () {
  */
 Route::get('/', 'Index\BlogController@index');
 Route::get('/blog/{id}', 'Index\BlogController@show')->where(['id' => '[0-9]+']);
-Route::get('/blog/love/{id}', 'Index\BlogController@blogLoverCount')->where(['id' => '[0-9]+']);
+Route::post('/blog/love/{id}', 'Index\BlogController@blogLoverCount')->where(['id' => '[0-9]+']);
 
+/**
+ * 评论相关路由控制
+ */
+Route::post('/blog/comment/add/{id}','Index\CommentsController@create')->where(['id' => '[0-9]+']);
 /**
  * 编辑器文件上传控制
  */

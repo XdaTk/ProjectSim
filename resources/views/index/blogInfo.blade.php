@@ -16,8 +16,9 @@
             <hr>
             {{$blogInfo->article}}
             <p>
-                <a class="uk-button uk-button-danger" href="#" onclick=""><i
-                            class="uk-icon-star"></i>&nbsp;点赞({{$blogInfo->loves}})</a>
+                <a class="uk-button uk-button-danger" id="lover{{$blogInfo->id}}" href="#lover{{$blogInfo->id}}"
+                   onclick="addLoverCount({{$blogInfo->id}})"><i
+                            class="uk-icon-star"></i>&nbsp;喜欢({{$blogInfo->loves}})</a>
                 <a class="uk-button uk-button-primary" href="#my-id" data-uk-modal=""><i class="uk-icon-comment"></i>&nbsp;评论</a>
             </p>
         </article>
@@ -39,25 +40,22 @@
                                 tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
                         </div>
                     </article>
-                    <ul>
-                        <li>
-                            <article class="uk-comment">
-                                <header class="uk-comment-header">
-                                    <img class="uk-comment-avatar"
-                                         src="http://www.getuikit.net/docs/images/placeholder_avatar.svg" alt=""
-                                         height="50" width="50">
-                                    <h4 class="uk-comment-title">Author</h4>
+                </li>
+                <li>
+                    <article class="uk-comment">
+                        <header class="uk-comment-header">
+                            <img class="uk-comment-avatar"
+                                 src="http://www.getuikit.net/docs/images/placeholder_avatar.svg" alt="" height="50"
+                                 width="50">
+                            <h4 class="uk-comment-title">Author</h4>
 
-                                    <div class="uk-comment-meta">12 days ago | Profile | #</div>
-                                </header>
-                                <div class="uk-comment-body">
-                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                                        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-                                        voluptua.</p>
-                                </div>
-                            </article>
-                        </li>
-                    </ul>
+                            <div class="uk-comment-meta">12 days ago | Profile | #</div>
+                        </header>
+                        <div class="uk-comment-body">
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                        </div>
+                    </article>
                 </li>
             </ul>
         </div>
@@ -80,23 +78,25 @@
             <div class="uk-modal-header">
                 <h2>评论</h2>
             </div>
-            <form class="uk-form">
+            <form class="uk-form" id="commitForm">
                 <div class="uk-grid">
                     <div class="uk-width-1-2 uk-form-icon">
                         <i class="uk-icon-user"></i>
-                        <input type="text" placeholder="请输入昵称" class="uk-width-1-1">
+                        <input type="text" name="name" placeholder="请输入昵称" class="uk-width-1-1">
                     </div>
                     <div class="uk-width-1-2 uk-form-icon">
                         <i class="uk-icon-envelope"></i>
-                        <input type="email" placeholder="请输入邮箱" class="uk-width-1-1">
+                        <input type="email" name="email" placeholder="请输入邮箱" class="uk-width-1-1">
                     </div>
                     <div class="uk-width-1-1" style="padding-top: 10px">
-                        <textarea cols="" rows="3" placeholder="请输入评论内容" class="uk-width-1-1"></textarea>
+                        <textarea cols="" rows="3" name="comment" placeholder="请输入评论内容" class="uk-width-1-1"></textarea>
                     </div>
                 </div>
                 <div class="uk-modal-footer uk-text-right">
                     <button type="button" class="uk-button uk-button-danger uk-modal-close">取消</button>
-                    <button type="submit" class="uk-button uk-button-primary">评论</button>
+                    <button type="button" onclick="addComments({{$blogInfo->id}})" class="uk-button uk-button-primary">
+                        评论
+                    </button>
                 </div>
             </form>
         </div>
