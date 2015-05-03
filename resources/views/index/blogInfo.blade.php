@@ -24,52 +24,11 @@
         </article>
         <hr>
         <div class="uk-width-1-1">
-            <ul class="uk-comment-list">
-                <li>
-                    <article class="uk-comment">
-                        <header class="uk-comment-header">
-                            <img class="uk-comment-avatar"
-                                 src="http://www.getuikit.net/docs/images/placeholder_avatar.svg" alt="" height="50"
-                                 width="50">
-                            <h4 class="uk-comment-title">Author</h4>
-
-                            <div class="uk-comment-meta">12 days ago | Profile | #</div>
-                        </header>
-                        <div class="uk-comment-body">
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                        </div>
-                    </article>
-                </li>
-                <li>
-                    <article class="uk-comment">
-                        <header class="uk-comment-header">
-                            <img class="uk-comment-avatar"
-                                 src="http://www.getuikit.net/docs/images/placeholder_avatar.svg" alt="" height="50"
-                                 width="50">
-                            <h4 class="uk-comment-title">Author</h4>
-
-                            <div class="uk-comment-meta">12 days ago | Profile | #</div>
-                        </header>
-                        <div class="uk-comment-body">
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                        </div>
-                    </article>
-                </li>
+            <ul class="uk-comment-list" id="commentList">
             </ul>
         </div>
-        <div class="uk-width-1-1">
-            <ul class="uk-pagination">
-                <li class="uk-disabled"><span><i class="uk-icon-angle-double-left"></i></span></li>
-                <li class="uk-active"><span>1</span></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><span>...</span></li>
-                <li><a href="#">20</a></li>
-                <li><a href="#"><i class="uk-icon-angle-double-right"></i></a></li>
-            </ul>
+        <div class="uk-width-1-1" id="commentPage">
+            <ul class="uk-pagination" data-uk-pagination="{}"></ul>
         </div>
     </div>
     <div id="my-id" class="uk-modal">
@@ -101,4 +60,9 @@
             </form>
         </div>
     </div>
+    <script>
+        $(function () {
+            getFirstComments({{$blogInfo->id}});
+        });
+    </script>
 @stop

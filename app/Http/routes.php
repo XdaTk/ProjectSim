@@ -25,6 +25,7 @@ Route::post('/blog/love/{id}', 'Index\BlogController@blogLoverCount')->where(['i
  * 评论相关路由控制
  */
 Route::post('/blog/comment/add/{id}','Index\CommentsController@create')->where(['id' => '[0-9]+']);
+Route::post('/blog/comment/show/{id}','Index\CommentsController@show')->where(['id' => '[0-9]+']);
 /**
  * 编辑器文件上传控制
  */

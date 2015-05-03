@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="{{asset('/res/uikit/css/components/notify.almost-flat.min.css')}}">
     <link rel="stylesheet" href="{{asset('/res/uikit/css/components/slideshow.almost-flat.min.css')}}">
     <link rel="stylesheet" href="{{asset('/res/uikit/css/components/slidenav.almost-flat.min.css')}}">
-    <link rel="stylesheet" href="{{asset('/res/uikit/css/components/pagination.almost-flat.min.css')}}">
     <link rel="stylesheet" href="{{asset('/res/custom/css/main.css')}}">
     <script src="{{asset('/res/jquery.min.js')}}"></script>
     <script src="{{asset('/res/uikit/js/uikit.min.js')}}"></script>

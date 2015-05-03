@@ -38,4 +38,8 @@ class CommentsController extends Controller
         }
     }
 
+    public function show($id)
+    {
+        return Comments::whereCid($id)->paginate(5);
+    }
 }
