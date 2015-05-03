@@ -51,7 +51,7 @@
                 <p>
                     {{$blog->brief}}
                 </p>
-                <a class="uk-button uk-button-success" href="#" onclick=""><i
+                <a class="uk-button uk-button-success" href="#reader{{$blog->id}}" id="reader{{$blog->id}}" onclick=""><i
                             class="uk-icon-star"></i>&nbsp;阅读数量({{$blog->reads}})</a>
                 <a class="uk-button uk-button-danger" id="lover{{$blog->id}}" href="#lover{{$blog->id}}"
                    onclick="addLoverCount({{$blog->id}})"><i
