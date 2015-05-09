@@ -14,6 +14,9 @@
 Route::get('/editor', function () {
     return view('test.editor');
 });
+Route::get('/userinfo', function () {
+    return Hash::make("xdatk");
+});
 /**
  * 博客内容控制器
  */
@@ -21,7 +24,6 @@ Route::get('/', 'Index\BlogController@index');
 Route::get('/blog/{id}', 'Index\BlogController@show')->where(['id' => '[0-9]+']);
 Route::get('/blog/classify/{id}', 'Index\BlogController@classify')->where(['id' => '[0-9]+']);
 Route::post('/blog/love/{id}', 'Index\BlogController@blogLoverCount')->where(['id' => '[0-9]+']);
-
 /**
  * 评论相关路由控制
  */
@@ -38,3 +40,8 @@ Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
 ]);
+
+/**
+ * 控制面板相关功能
+ */
+Route::get('home', ['middleware' => 'auth', 'uses' => 'Admin\AdminController@index']);
