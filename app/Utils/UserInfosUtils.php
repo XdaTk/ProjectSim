@@ -16,7 +16,7 @@ class UserInfosUtils {
         $value = \Cache::get('findUserInfos');
         if ($value == null) {
             $value = User::all();
-            \Cache::pull('findUserInfos', $value, 60);
+            \Cache::put('findUserInfos', $value, 60);
         }
         return $value;
     }

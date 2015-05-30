@@ -16,7 +16,7 @@ class ClassifiesUtils {
         $value = \Cache::get('findClassify');
         if ($value == null) {
             $value = Classifies::all();
-            \Cache::pull('findClassify', $value, 60);
+            \Cache::put('findClassify', $value, 60);
         }
         return $value;
     }

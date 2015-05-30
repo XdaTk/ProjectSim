@@ -18,7 +18,7 @@ class LoveWebUtils
         $value = \Cache::get('findAllLoveWebs');
         if ($value == null) {
             $value = LoveWeb::all();
-            \Cache::pull('findAllLoveWebs', $value, 60);
+            \Cache::put('findAllLoveWebs', $value, 60);
         }
         return $value;
     }
