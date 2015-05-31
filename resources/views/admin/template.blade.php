@@ -11,52 +11,55 @@
     <script src="{{asset('/res/jquery.min.js')}}"></script>
     <script src="{{asset('/res/uikit/js/uikit.min.js')}}"></script>
     <script src="{{asset('/res/uikit/js/components/accordion.min.js')}}"></script>
+    <script src="{{asset('/res/uikit/js/components/pagination.min.js')}}"></script>
     <script src="{{asset('/res/custom/js/main.js')}}"></script>
 </head>
 <body>
-<div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+<div class="uk-margin uk-margin-top">
     <nav class="uk-navbar">
-        <a class="uk-navbar-brand uk-hidden-small" href="#">控制台</a>
-        <div class="uk-navbar-content uk-hidden-small">
-            <ul class="uk-navbar-nav">
-                <li><a href=""><i class="uk-icon-list-alt"></i>撰写</a></li>
-                <li aria-expanded="false" aria-haspopup="true" class="uk-parent" data-uk-dropdown="">
-                    <a href=""><i class="uk-icon-building-o"></i>管理</a>
-                    <div style="" class="uk-dropdown uk-dropdown-navbar uk-dropdown-small">
-                        <ul class="uk-nav uk-nav-navbar">
-                            <li><a href="#">发表文章</a></li>
-                            <li><a href="#">所有文章</a></li>
-                        </ul>
-                    </div>
+        <ul class="uk-navbar-nav uk-hidden-small">
+            <li class="uk-active"><a href="/home">控制台</a></li>
+            <li class="uk-parent" data-uk-dropdown="">
+                <a href="/home/blog/create">撰写文章</a>
+            </li>
+            <li class="uk-parent" data-uk-dropdown="">
+                <a href="">管理</a>
+
+                <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-small">
+                    <ul class="uk-nav uk-nav-navbar">
+                        <li><a href="/home/blog/">文章管理</a></li>
+                        <li><a href="/home/comment">评论管理</a></li>
+                        <li><a href="/home/classify/create">分类添加</a></li>
+                        <li><a href="/home/classify">分类管理</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="uk-parent" data-uk-dropdown="">
+                <a href="">设置</a>
+
+                <div class="uk-dropdown uk-dropdown-navbar">
+                    <ul class="uk-nav uk-nav-navbar">
+                        <li><a href="/home/love/create">添加友情链接</a></li>
+                        <li><a href="/home/love">友情链接管理</a></li>
+                    </ul>
+                </div>
+
+            </li>
+        </ul>
+        <a href="#offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas=""></a>
+        <div class="uk-navbar-flip">
+            <a href="" class="uk-navbar-toggle uk-navbar-toggle-alt uk-visible-small"></a>
+            <ul class="uk-navbar-nav uk-hidden-small">
+                <li class="uk-parent">
+                    <a href="">{{Auth::user()->name}}</a>
                 </li>
-                <li aria-expanded="false" aria-haspopup="true" class="uk-parent" data-uk-dropdown="">
-                    <a href=""><i class="uk-icon-folder-open-o"></i>设置</a>
-                    <div style="" class="uk-dropdown uk-dropdown-navbar uk-dropdown-small">
-                        <ul class="uk-nav uk-nav-navbar">
-                            <li><a href="#">上传文件</a></li>
-                            <li><a href="#">试图文件</a></li>
-                        </ul>
-                    </div>
-                </li>
+                <li><a href="/auth/logout">登出</a></li>
+                <li class=""><a href="/">网站</a></li>
             </ul>
         </div>
-        <div class="uk-navbar-content uk-hidden-small uk-navbar-flip">
-            <ul class="uk-navbar-nav">
-                <li aria-expanded="false" aria-haspopup="true" class="uk-parent" data-uk-dropdown="">
-                    <a href=""><i class="uk-icon-user"></i>用户名</a>
-                    <div style="" class="uk-dropdown uk-dropdown-navbar uk-dropdown-small">
-                        <ul class="uk-nav uk-nav-navbar">
-                            <li><a href="#">个人信息修改</a></li>
-                            <li><a href="#">退出登录</a></li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <a href="#offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
-        <div class="uk-navbar-brand uk-navbar-center uk-visible-small">控制台</div>
+        <div class="uk-navbar-content uk-navbar-center"><a href="#"><img src="{{asset('/res/custom/imgs/Sim.png')}}"></a></div>
     </nav>
-    @yield('main')
 </div>
+@yield("main")
 </body>
 </html>

@@ -45,3 +45,24 @@ Route::controllers([
  * 控制面板相关功能
  */
 Route::get('home', ['middleware' => 'auth', 'uses' => 'Admin\AdminController@index']);
+Route::get('home/blog/create', ['middleware' => 'auth', 'uses' => 'Admin\BlogEditController@create']);
+Route::post('home/blog/create', ['middleware' => 'auth', 'uses' => 'Admin\BlogEditController@save']);
+Route::get('home/blog/update/{id}', ['middleware' => 'auth', 'uses' => 'Admin\BlogEditController@update']);
+Route::post('home/blog/update/{id}', ['middleware' => 'auth', 'uses' => 'Admin\BlogEditController@updatePost']);
+Route::get('home/blog/', ['middleware' => 'auth', 'uses' => 'Admin\BlogEditController@index']);
+Route::get('home/blog/del/{id}', ['middleware' => 'auth', 'uses' => 'Admin\BlogEditController@del']);
+
+Route::get('home/classify/create', ['middleware' => 'auth', 'uses' => 'Admin\ClassifyEditController@create']);
+Route::post('home/classify/create', ['middleware' => 'auth', 'uses' => 'Admin\ClassifyEditController@save']);
+Route::get('home/classify/update/{id}', ['middleware' => 'auth', 'uses' => 'Admin\ClassifyEditController@update']);
+Route::post('home/classify/update/{id}', ['middleware' => 'auth', 'uses' => 'Admin\ClassifyEditController@updatePost']);
+Route::get('home/classify/', ['middleware' => 'auth', 'uses' => 'Admin\ClassifyEditController@index']);
+Route::get('home/classify/del/{id}', ['middleware' => 'auth', 'uses' => 'Admin\ClassifyEditController@del']);
+
+Route::get('home/comment/', ['middleware' => 'auth', 'uses' => 'Admin\CommentsEditController@index']);
+Route::get('home/comment/del/{id}', ['middleware' => 'auth', 'uses' => 'Admin\CommentsEditController@del']);
+
+Route::get('home/love/create', ['middleware' => 'auth', 'uses' => 'Admin\AdminController@lovecreate']);
+Route::post('home/love/create', ['middleware' => 'auth', 'uses' => 'Admin\AdminController@lovesave']);
+Route::get('home/love/', ['middleware' => 'auth', 'uses' => 'Admin\AdminController@loveindex']);
+Route::get('home/love/del/{id}', ['middleware' => 'auth', 'uses' => 'Admin\AdminController@lovedel']);

@@ -25,10 +25,4 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Comments extends Model
 {
-
-    public function users()
-    {
-        return $this->hasOne('SimBlog\Models\User', 'id', 'user_id');
-    }
-
 }
