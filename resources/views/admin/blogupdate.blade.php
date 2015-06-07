@@ -39,7 +39,7 @@
                         <div>
                             <label class="uk-form-label" for="form-h-s">图片</label>
                             <div class="uk-form-controls">
-                                <input id="form-h-s" type="hidden"   name="img" class="uk-width-1-1" value="{{$blog->url}}">
+                                <input id="form-h-s" type="text"  name="img" class="uk-width-1-1" value="{{$blog->url}}">
                             </div>
                         </div>
                         <div class="uk-form-row">
