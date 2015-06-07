@@ -98,6 +98,7 @@ class BlogEditController extends Controller
         $blog->article = \Input::get("article-markdown-doc");
         $blog->url = \Input::get("img");
         $blog->save();
+        $this->delCache();
         return view('admin/admin');
     }
 
@@ -105,7 +106,17 @@ class BlogEditController extends Controller
     public function del($id)
     {
         Blogs::destroy($id);
+        $this->delCache();
         return \Redirect::to("/home/blog/");
+    }
+    
+    public function delCache(){
+        \Cache::forget('findNewsTop');
+        \Cache::forget('findReadsTop');
+        \Cache::forget('findLovesTop');
+        \Cache::forget('findClassify');
+        \Cache::forget('findUserInfos');
+        \Cache::forget('findAllLoveWebs');
     }
 
 }
