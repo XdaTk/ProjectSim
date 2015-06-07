@@ -60,6 +60,7 @@ class BlogEditController extends Controller
         $blog->reads = 0;
         $blog->loves = 0;
         $blog->save();
+        $this->delCache();
         return view('admin/admin');
     }
 

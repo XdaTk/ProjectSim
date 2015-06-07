@@ -34,6 +34,12 @@ class AdminController extends Controller {
 
     public function lovedel($id)
     {
+        \Cache::forget('findNewsTop');
+        \Cache::forget('findReadsTop');
+        \Cache::forget('findLovesTop');
+        \Cache::forget('findClassify');
+        \Cache::forget('findUserInfos');
+        \Cache::forget('findAllLoveWebs');
         LoveWeb::destroy($id);
         return \Redirect::to("/home/love/");
     }
@@ -53,6 +59,12 @@ class AdminController extends Controller {
 
     public function lovesave()
     {
+        \Cache::forget('findNewsTop');
+        \Cache::forget('findReadsTop');
+        \Cache::forget('findLovesTop');
+        \Cache::forget('findClassify');
+        \Cache::forget('findUserInfos');
+        \Cache::forget('findAllLoveWebs');
         $validator = Validator::make(\Input::all(),
             ['name' => 'required|min:5'],
             ['url' => 'required|min:5'],

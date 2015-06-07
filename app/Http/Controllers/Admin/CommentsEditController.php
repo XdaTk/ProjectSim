@@ -28,6 +28,12 @@ class CommentsEditController extends Controller {
 	 */
 	public function del($id)
 	{
+	    \Cache::forget('findNewsTop');
+        \Cache::forget('findReadsTop');
+        \Cache::forget('findLovesTop');
+        \Cache::forget('findClassify');
+        \Cache::forget('findUserInfos');
+        \Cache::forget('findAllLoveWebs');
         Comments::destroy($id);
         return \Redirect::to("/home/comment");
 	}

@@ -36,6 +36,12 @@ class ClassifyEditController extends Controller {
 
     public function save()
     {
+        \Cache::forget('findNewsTop');
+        \Cache::forget('findReadsTop');
+        \Cache::forget('findLovesTop');
+        \Cache::forget('findClassify');
+        \Cache::forget('findUserInfos');
+        \Cache::forget('findAllLoveWebs');
         $validator = Validator::make(\Input::all(),
             ['name' => 'required|min:5'],
             ['about' => 'required|min:5'],
@@ -72,6 +78,12 @@ class ClassifyEditController extends Controller {
 
     public function updatePost($id)
     {
+        \Cache::forget('findNewsTop');
+        \Cache::forget('findReadsTop');
+        \Cache::forget('findLovesTop');
+        \Cache::forget('findClassify');
+        \Cache::forget('findUserInfos');
+        \Cache::forget('findAllLoveWebs');
         $validator = Validator::make(\Input::all(),
             ['name' => 'required|min:5'],
             ['about' => 'required|min:5'],
@@ -95,6 +107,12 @@ class ClassifyEditController extends Controller {
 
     public function del($id)
     {
+        \Cache::forget('findNewsTop');
+        \Cache::forget('findReadsTop');
+        \Cache::forget('findLovesTop');
+        \Cache::forget('findClassify');
+        \Cache::forget('findUserInfos');
+        \Cache::forget('findAllLoveWebs');
         Classifies::destroy($id);
         return \Redirect::to("/home/classify/");
     }
