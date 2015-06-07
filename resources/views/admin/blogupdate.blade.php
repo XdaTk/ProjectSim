@@ -45,9 +45,7 @@
                         <div class="uk-form-row">
                             <label class="uk-form-label" for="form-h-t">内容</label>
                             <div id="article" class="uk-form-controls">
-                                <textarea style="display:none;">
-                                       {{$blog->article}}
-                                </textarea>
+                                <textarea style="display:none;">{{$blog->article}}</textarea>
                             </div>
                             <script>
                                 var testEditor;

@@ -53,9 +53,7 @@
                             <label class="uk-form-label" for="form-h-t">内容</label>
 
                             <div id="article" class="uk-form-controls">
-                                 <textarea style="display:none;">
-                                {{$inputs['article-markdown-doc'] or ''}}
-                                     </textarea>
+                                 <textarea style="display:none;">{{$inputs['article-markdown-doc'] or ''}}</textarea>
                             </div>
                             <script>
                                 var testEditor;
